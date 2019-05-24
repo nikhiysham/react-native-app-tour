@@ -73,21 +73,21 @@ class AppTourView {
       )
 
     if (
-      view._reactInternalFiber === undefined ||
-      view._reactInternalFiber === null) {
+      view === undefined ||
+      view === null) {
       throw new Error("Tour view does not have React Internal Fiber.");
     }
 
     if (
-      view._reactInternalFiber.key === undefined ||
-      view._reactInternalFiber.key === null
+      view.key === undefined ||
+      view.key === null
     )
       throw new Error(
         'Each tour view should have a key prop. Please check the tour component props.'
       )
 
     return {
-      key: view._reactInternalFiber.key,
+      key: view.key,
       view: findNodeHandle(view),
       props: props
     }
